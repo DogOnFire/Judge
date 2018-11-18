@@ -21,7 +21,7 @@ import org.bukkit.entity.Player;
 public class PlayerManager
 {
 	private Judge plugin;
-    List<String> traits = new ArrayList<String>();
+    private List<String> traits = new ArrayList<String>();
 	private FileConfiguration playersConfig = null;
 	private File playersConfigFile = null;
 	private String datePattern = "HH:mm:ss dd-MM-yyyy";

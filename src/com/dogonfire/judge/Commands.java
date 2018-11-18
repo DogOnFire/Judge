@@ -34,7 +34,7 @@ public class Commands
 		{			
 			if (args.length == 0)
 			{
-				CommandQuestionPersonality(player, args);
+				commandQuestionPersonality(player, args);
 				//CommandInfo(player);
 				return true;
 			}
@@ -43,11 +43,11 @@ public class Commands
 			{				
 				if (args[0].equalsIgnoreCase("a") || args[0].equalsIgnoreCase("b") || args[0].equalsIgnoreCase("c") || args[0].equalsIgnoreCase("d") || args[0].equalsIgnoreCase("e") || args[0].equalsIgnoreCase("f"))
 				{					
-					CommandVotePersonality(player, args);
+					commandVotePersonality(player, args);
 				}
 				else
 				{
-					CommandViewPersonality(player, args);
+					commandViewPersonality(player, args);
 				}
 			}
 			
@@ -58,7 +58,7 @@ public class Commands
 		return true;
 	}
 
-	public void CommandInfo(Player player)
+	public void commandInfo(Player player)
 	{
 		player.sendMessage(ChatColor.YELLOW + "---------- " + this.plugin.getDescription().getFullName() + " ----------");
 		player.sendMessage(ChatColor.AQUA + "By DogOnFire");
@@ -66,7 +66,7 @@ public class Commands
 		player.sendMessage(ChatColor.AQUA + "Use " + ChatColor.WHITE + "/judge" + ChatColor.AQUA + " to judge another players personality!");				
 	}	
 	
-	public void CommandViewPersonality(Player player, String[] args)
+	public void commandViewPersonality(Player player, String[] args)
 	{
 		OfflinePlayer targetPlayer = plugin.getServer().getOfflinePlayer(args[0]);	
 		
@@ -92,7 +92,7 @@ public class Commands
 		//player.sendMessage(ChatColor.AQUA + "Check back later and see how it changes!");		
 	}
 	
-	public void CommandQuestionPersonality(Player player, String[] args)
+	public void commandQuestionPersonality(Player player, String[] args)
 	{
 		int time = plugin.getPlayerManager().getTimeUntilCanVote(player);
 		
@@ -128,11 +128,11 @@ public class Commands
 		player.sendMessage(ChatColor.AQUA + "Don't know that player? Just use " + ChatColor.WHITE + "/judge" + ChatColor.AQUA + " again!");				
 	}
 
-	public void CommandVotePersonality(Player player, String[] args)
+	public void commandVotePersonality(Player player, String[] args)
 	{		
 		int time = plugin.getPlayerManager().getTimeUntilCanVote(player);
 		
-		if(time > 0 )
+		if(time > 0)
 		{
 			//player.sendMessage(ChatColor.RED + "Wait " + ChatColor.YELLOW + time + ChatColor.RED + " minutes before judging again!");
 			//return;
